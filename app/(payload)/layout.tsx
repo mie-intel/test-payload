@@ -27,9 +27,8 @@ const Layout = ({ children }: Args) => (
     config={config}
     importMap={importMap}
     serverFunction={serverFunction}
-  >
-    {children}
-  </RootLayout>
+    children={children}
+  />
 );
 
 export default Layout;
