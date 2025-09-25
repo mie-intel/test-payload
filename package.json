@@ -2,6 +2,7 @@
   "name": "payload",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,9 +10,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.53.0",
     "@payloadcms/db-vercel-postgres": "^3.53.0",
     "@payloadcms/next": "^3.53.0",
     "@payloadcms/richtext-lexical": "^3.53.0",
+    "@payloadcms/storage-s3": "^3.56.0",
+    "dotenv": "^17.2.2",
     "graph": "^0.2.0",
     "next": "15.5.0",
     "payload": "^3.53.0",
@@ -24,6 +28,7 @@
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2"
   }
 }
