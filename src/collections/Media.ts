@@ -6,6 +6,7 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   admin: {
+    useAsTitle: "INI CONTOH GAMBAR",
     description: "Kumpulan gambar dan file lainnya.",
   },
   fields: [
