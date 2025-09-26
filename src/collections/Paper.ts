@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 
 export const Papers: CollectionConfig = {
-  slug: "Papers",
+  slug: "paper",
   access: {
     read: () => true,
   },
@@ -16,10 +16,5 @@ export const Papers: CollectionConfig = {
       type: "text",
       required: true,
     },
-    // {
-    //   name: "content",
-    //   type: "richText",
-    //   required: true,
-    // },
   ],
 };
