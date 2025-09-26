@@ -67,7 +67,7 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    Papers: Paper;
+    paper: Paper;
     media: Media;
     users: User;
     'payload-locked-documents': PayloadLockedDocument;
@@ -76,7 +76,7 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    Papers: PapersSelect<false> | PapersSelect<true>;
+    paper: PaperSelect<false> | PaperSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -117,12 +117,13 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Papers".
+ * via the `definition` "paper".
  */
 export interface Paper {
   id: number;
   title: string;
   author: string;
+  media?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -198,7 +199,7 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'Papers';
+        relationTo: 'paper';
         value: number | Paper;
       } | null)
     | ({
@@ -253,11 +254,12 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Papers_select".
+ * via the `definition` "paper_select".
  */
-export interface PapersSelect<T extends boolean = true> {
+export interface PaperSelect<T extends boolean = true> {
   title?: T;
   author?: T;
+  media?: T;
   updatedAt?: T;
   createdAt?: T;
 }
